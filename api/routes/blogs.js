@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 				count: docs.length,
 				blogs: docs
 			};
-			res.status(200).json(response);
+			res.header('X-Total-Count', docs.length).status(200).json(response);
 		})
 		.catch((err) => {
 			console.log(err);
